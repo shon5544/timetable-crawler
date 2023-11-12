@@ -4,7 +4,7 @@ import time
 
 ## 상위 모듈 참조
 import sys, os
-sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))).replace("\crawler", ""))
 
 from global_module.driverSetting import DriverSetting
 
