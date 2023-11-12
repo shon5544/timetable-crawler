@@ -27,14 +27,3 @@ class Crawler:
     
     def quit(self) -> None:
         self.driver.quit()
-    
-## test
-driverSetting = DriverSetting()
-crawler = Crawler(driverSetting)
-
-print("Id, Password를 입력해주세요: ", end="")
-userId, userPw = map(str, input().split())
-
-crawler.login(userId, userPw)
-
-crawler.quit()
