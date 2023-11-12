@@ -1,1 +1,4 @@
 /chromedriver/
+*.pyc
+__pycache__/
+/image/
