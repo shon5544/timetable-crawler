@@ -4,13 +4,14 @@ from dto.loginRequestDto import LoginRequestDto
 from global_module.driverSetting import DriverSetting
 
 app = FastAPI()
-driverSetting = DriverSetting()
-crawler = Crawler(driverSetting)
 
 
 # 테스트 용 api
 @app.get("/login")
 def login(loginRequestDto: LoginRequestDto):
+    driverSetting = DriverSetting()
+    crawler = Crawler(driverSetting)
+
     userId = loginRequestDto.userId
     userPw = loginRequestDto.userPw
 
