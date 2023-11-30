@@ -40,8 +40,6 @@ class CrawlingService:
 
         time.sleep(2)
 
-        self.driver.save_screenshot("screenshot.png")
-
     def crawlTimeTable(self):
         monday = ["WDE5", "WDF4", "WD0103", "WD0112", "WD0121", "WD0130", "WD013F", "WD014E", "WD015D", "WD016C"]
         tuesday = ["WDE7", "WDF6", "WD0105", "WD0114", "WD0123", "WD0132", "WD0141", "WD0150", "WD015F", "WD016E"]
