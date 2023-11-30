@@ -1,4 +1,5 @@
-from .domain.loginService import LoginService
+from .domain.login.loginService import LoginService
+from .domain.crawl.crawlingService import CrawlingService
 
 ## 상위 모듈 참조
 import sys, os
@@ -10,6 +11,7 @@ class Crawler:
         self.driver = driverSetting.driver
     
         self.loginService = LoginService(driverSetting)
+        self.crawlingService = CrawlingService(driverSetting)
     
     def takeScreenShotForTest(self, filename: str) -> None:
         self.driver.save_screenshot(filename)
@@ -22,7 +24,13 @@ class Crawler:
 
         self.loginService.clickLoginBtn()
 
-        self.takeScreenShotForTest("screenshot.png")
+        # self.takeScreenShotForTest("screenshot.png")
+
+    def crawlingTimeTable(self) -> None:
+        self.crawlingService.moveToTimeTablePage()
+        response = self.crawlingService.crawlTimeTable()
+
+        return response
 
     
     def quit(self) -> None:

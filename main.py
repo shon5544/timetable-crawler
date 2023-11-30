@@ -18,8 +18,10 @@ def crawling(crawlingRequestDto: CrawlingRequestDto):
     print(userId, userPw)
 
     crawler.login(userId, userPw)
+    result = crawler.crawlingTimeTable()
     crawler.quit()
 
     return {
-        "isSuccess": True
+        "isSuccess": True,
+        "result": result
     }
