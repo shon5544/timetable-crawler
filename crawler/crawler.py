@@ -1,4 +1,4 @@
-from domain.loginService import LoginService
+from .domain.loginService import LoginService
 
 ## 상위 모듈 참조
 import sys, os
@@ -17,12 +17,16 @@ class Crawler:
     def login(self, userId: str, userPw: str) -> None:
         self.loginService.gotoLoginpage()
 
+        print(f"login 진입: {userId}")
+
         self.loginService.enterId(userId)
         self.loginService.enterPw(userPw)
 
         self.loginService.clickLoginBtn()
 
-        self.takeScreenShotForTest("./image/screenshot.png")
+        self.takeScreenShotForTest("screenshot.png")
+
+        print("스크린샷 완료.")
 
     
     def quit(self) -> None:
