@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from webdriver_manager.chrome import ChromeDriverManager
-import requests
 
 
 class DriverSetting:
@@ -23,7 +22,6 @@ class DriverSetting:
 
         # ChromeService 설정
         self.service = ChromeService(ChromeDriverManager(driver_version="119.0.6045.105").install())
-        # self.options.binary_location = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
         # 드라이버 위치 경로 입력
         self.driver = webdriver.Chrome(service=self.service, options=self.options)
