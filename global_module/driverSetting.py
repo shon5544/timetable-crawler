@@ -1,6 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
+from webdriver_manager.chrome import ChromeDriverManager
+import requests
+
 
 class DriverSetting:
     def __init__(self):
@@ -19,7 +22,8 @@ class DriverSetting:
         self.options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36')  # user-agent 이름 설정
 
         # ChromeService 설정
-        self.service = ChromeService(executable_path='./chromedriver/chromedriver.exe')
+        self.service = ChromeService(ChromeDriverManager(driver_version="119.0.6045.105").install())
+        # self.options.binary_location = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
         # 드라이버 위치 경로 입력
         self.driver = webdriver.Chrome(service=self.service, options=self.options)
