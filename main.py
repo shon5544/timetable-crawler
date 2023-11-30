@@ -12,8 +12,8 @@ def crawling(crawlingRequestDto: CrawlingRequestDto):
     driverSetting = DriverSetting()
     crawler = Crawler(driverSetting)
 
-    userId = crawlingRequestDto.userId
-    userPw = crawlingRequestDto.userPw
+    userId: str = crawlingRequestDto.userId
+    userPw: str = crawlingRequestDto.userPw
 
     print(userId, userPw)
 
