@@ -7,10 +7,18 @@ app = FastAPI()
 driverSetting = DriverSetting()
 crawler = Crawler(driverSetting)
 
+
+# 테스트 용 api
 @app.get("/login")
 def login(loginRequestDto: LoginRequestDto):
     userId = loginRequestDto.userId
     userPw = loginRequestDto.userPw
 
+    print(userId, userPw)
+
     crawler.login(userId, userPw)
     crawler.quit()
+
+    return {
+        "isSuccess": True
+    }
