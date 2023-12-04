@@ -15,8 +15,6 @@ def crawling(crawlingRequestDto: CrawlingRequestDto):
     userId: str = crawlingRequestDto.userId
     userPw: str = crawlingRequestDto.userPw
 
-    print(userId, userPw)
-
     crawler.login(userId, userPw)
     result = crawler.crawlingTimeTable()
     crawler.quit()

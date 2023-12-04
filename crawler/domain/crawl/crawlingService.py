@@ -20,9 +20,6 @@ class CrawlingService:
         enrolmentBtn.click()
         self.driver.implicitly_wait(5)
 
-        print("good")
-
-
         personalTimeTableBtn = self.driver.find_element(By.XPATH, '//*[@id="1724938fdd5d98311a8647b31efd21fe"]/a')
         personalTimeTableBtn.click()
         self.driver.implicitly_wait(5)
@@ -62,19 +59,6 @@ class CrawlingService:
         self.getTimeTable(friday, friValue)
         self.getTimeTable(saturday, satValue)
 
-        print(monValue)
-        print()
-        print(tueValue)
-        print()
-        print(wedValue)
-        print()
-        print(thuValue)
-        print()
-        print(friValue)
-        print()
-        print(satValue)
-        print()
-
         response = {
             "monday": monValue,
             "tuesday": tueValue,
@@ -91,8 +75,3 @@ class CrawlingService:
             myTime = self.driver.find_element(By.XPATH, f'//*[@id="{i}"]')
             text = myTime.text
             dayValue.append(text)
-            if len(text) > 1:
-                print(text)
-            else:
-                print("null")
-            print()
