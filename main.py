@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from crawler.crawler import Crawler
-from dto.crawlingRequestDto import CrawlingRequestDto
 from global_module.driverSetting import DriverSetting
 
 app = FastAPI()
