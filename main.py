@@ -4,8 +4,6 @@ from global_module.driverSetting import DriverSetting
 
 app = FastAPI()
 
-
-# 테스트 용 api
 @app.get("/crawling/{userId}/{userPw}")
 def crawling(userId: str, userPw: str):
     driverSetting = DriverSetting()
